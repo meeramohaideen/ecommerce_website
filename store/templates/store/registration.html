@@ -1,0 +1,22 @@
+{% extends "store/main.html" %}
+{% load static %}
+{% block content %}
+
+    
+    {% if registered %}
+        <h1>Thank you for registering</h1>
+        <a href="{% url 'store' %}">Go To Store</a>
+    {% else %}
+        <h1>Register Here!</h1>
+        <p>Please fill out the below forms</p>
+
+        <form  enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+
+        {{ user_Form.as_p }}
+        <!-- {{ user_Form2.as_p }} -->
+        <input type="submit" value="Sign in">
+        </form>
+    {% endif %}
+
+{% endblock %}

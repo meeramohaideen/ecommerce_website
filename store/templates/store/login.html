@@ -1,0 +1,21 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Login</h1>
+
+
+<form action="{% url "loginPage" %}" method="POST">
+    {% csrf_token %}
+    
+    <label>User name : </label><br>
+    <input style="border-radius: 50px;" type="text" name="username" ><br>
+        <br>
+    <label>Password : </label><br>
+    <input style="border-radius: 50px; " type="password" name="password" >
+        <br>
+        <br>
+    <input style="margin-left: auto;margin-right: auto;display: block" class="btn btn-primary" type="submit" value="Log in">
+</form>
+
+{% endblock%}
